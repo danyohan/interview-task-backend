@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', static function () {
-    return 'test';
-});
+Route::get('/', [InvoiceController::class, 'index']);
+Route::put('/approve', [InvoiceController::class, 'approve']);
+Route::put('/reject', [InvoiceController::class, 'reject']);

@@ -1,8 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Modules\Invoices\Infrastructure\Database\Seeders;
+use Illuminate\Support\Facades\Artisan;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Artisan::call('db:seed', ['--class' => 'App\Modules\Invoices\Infrastructure\Database\Seeders\DatabaseSeeder']);
     }
 }
